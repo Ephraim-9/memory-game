@@ -19,14 +19,14 @@ function GameBoard() {
     };
 
     useEffect(() => {
-        fetchGifs();
+        fetchGifs("loading+screen+dark");
     }, []);
 
 
     return (
         <div>
             <div>
-            <h1>Search GIFs</h1>
+            <h3>Search GIFs</h3>
 
             <form onSubmit={handleSearchSubmit}>
                 <input 
