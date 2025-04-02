@@ -76,7 +76,7 @@ This project provided valuable hands-on experience in:
 ## Deployment
 
 The **Memory Game** is deployed and accessible online:
-[Live Demo](ephraim-9memory-game.netlify.app)
+[Live Demo](https://ephraim-9memory-game.netlify.app/)
 
 ## Contributing
 
