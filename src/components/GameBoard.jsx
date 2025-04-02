@@ -27,8 +27,9 @@ function GameBoard() {
 
     const handleGifClicks = (gifId) => {
         if (clickedGifs.includes(gifId)) {
-            setScore = (0)
-            clickedGifs = ([])
+            setHighScore((prev) => Math.max(prev, score))
+            setScore(0)
+            clickedGifs([])
         } else {
             setClickedGifs ([...clickedGifs, gifId])
             setScore(score + 1)
