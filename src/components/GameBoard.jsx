@@ -37,8 +37,13 @@ function GameBoard() {
                 setHighScore(score + 1)
             }
         }
+
+        setGifs(shuffleArray([...gifs]))
     }
 
+    const shuffleArray = (array) => {
+        return array.sort(() => Math.random() - 0.5)
+    }
 
     return (
         <div>
