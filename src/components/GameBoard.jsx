@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 
 function GameBoard() {
     const [gifs, setGifs] = useState([]);
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("Loading...");
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+    const [clickedGifs, setClickedGifs] = useState([]);
     
     const fetchGifs = async (query) => {
         const response = await fetch (
@@ -19,8 +22,22 @@ function GameBoard() {
     };
 
     useEffect(() => {
-        fetchGifs("loading+screen+dark");
+        fetchGifs(query);
     }, []);
+
+    const handleGifClicks = (gifId) => {
+        if (clickedGifs.includes(gifId)) {
+            setScore = (0)
+            clickedGifs = ([])
+        } else {
+            setClickedGifs ([...clickedGifs, gifId])
+            setScore(score + 1)
+
+            if (score + 1 > highScore) {
+                setHighScore(score + 1)
+            }
+        }
+    }
 
 
     return (
