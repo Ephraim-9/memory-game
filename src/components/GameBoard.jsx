@@ -48,6 +48,8 @@ function GameBoard() {
     return (
         <div>
             <div>
+            <h2>Score: {score}</h2>
+            <h2>High Score: {highScore}</h2>
             <h3>Search GIFs</h3>
 
             <form onSubmit={handleSearchSubmit}>
@@ -65,7 +67,10 @@ function GameBoard() {
             ) : (
                 <div>
                     {gifs.map((gif) => (
-                        <img key={gif.id} src={gif.images.fixed_height.url} alt="GIF" />
+                        <img key={gif.id} 
+                        src={gif.images.fixed_height.url} 
+                        alt="GIF"
+                        onClick={() => handleGifClicks(gif.id)} />
                     ))}
                 </div>
             )}
