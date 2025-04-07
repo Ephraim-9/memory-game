@@ -5,6 +5,7 @@ import App from "./App";
 describe("App component", () => {
   it("renders correct heading", () => {
     render(<App />);
-    expect(screen.getByRole("heading").textContent).toMatch(/Memory Card Game/i);
-  });
+    const heading = screen.getByRole("heading", { level: 1 });
+    expect(heading).toHaveTextContent(/Memory Card Game/i);
+  });  
 });
